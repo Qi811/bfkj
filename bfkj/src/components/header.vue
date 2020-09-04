@@ -35,7 +35,7 @@
 
 <script>
   export default{
-    name:'header',
+    name:'headers',
     data(){
       return{
         isActive:1

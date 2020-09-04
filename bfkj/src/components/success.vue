@@ -2,10 +2,10 @@
   <div class="success">
     <div class="swiper-container first-one">
       <div class="titles">
-        <div id="lfwz">
+        <div id="lfwz" v-if="!isShow">
           <h3>成功案例</h3>
         </div>
-        <div class="swiper-pagination first-p-one">
+        <div class="swiper-pagination first-p-one" :class="{'swip':isShow}">
         </div>
       </div>
       <div class="swiper-wrapper">
@@ -33,12 +33,17 @@
   import yhxth from '@/assets/images/yhx_3.jpg'
   export default{
     name:'success',
+    props:{
+      isShow:{
+        type:Boolean
+      }
+    },
     data(){
       return{
         num:24,
         number:6,
         yhxList:[yhxon,yhxtw,yhxth],
-        yhxListTwo:['摄影','塑造造型']
+        yhxListTwo:['摄影','塑造造型'],
       }
     },
     methods:{
@@ -89,6 +94,7 @@
 <style scoped="scoped">
   .success{
     height: 700px;
+    /* margin-top: 80px; */
   }
   .swiper-container {
     width: 1200px;
@@ -124,6 +130,9 @@
     width: 412px;
     height: 31px;
     right: 0px;
+  }
+  .swip{
+    left: 394px;
   }
   .swiper-slide {
     text-align: center;
